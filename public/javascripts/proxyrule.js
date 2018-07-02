@@ -1,6 +1,4 @@
-//let async = require('async');
 let opurl= require('C:\\Users\\hjx19\\WebstormProjects\\AppFaultToleranceTest\\public\\javascripts\\opurl.js');
-//let opdb = require('C:\\Users\\hjx19\\WebstormProjects\\AppFaultToleranceTest\\public\\javascripts\\opdb.js');
 let diffbody = require('C:\\Users\\hjx19\\WebstormProjects\\AppFaultToleranceTest\\public\\javascripts\\diffbody.js');
 
 module.exports = {
@@ -12,8 +10,6 @@ module.exports = {
             console.log(requestDetail.url);
             let newResponse = responseDetail.response;
             let initbody = newResponse.body.toString();
-            //wurl = urlop.formaturl();
-            //let mydb = new opdb(wurl,initbody);
             let newbody = diffbody(initbody);
             newResponse.body = JSON.stringify(newbody);
             console.log(newResponse.body);

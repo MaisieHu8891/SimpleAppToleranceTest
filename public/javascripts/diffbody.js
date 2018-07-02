@@ -7,16 +7,13 @@ function diffbody(respdata) {
         }
         return value;
     });
-    //let firstdata = JSON.stringify(firstrule);
     let seconddata =JSON.parse(respdata, function (key, value) {
         if (typeof value === 'string') {
             return '';
         }
         return value;
     });
-    // let seconddata = JSON.stringify(secondrule);
     dataarray.push(initdata, firstdata, seconddata);
-    /////
     var idx = parseInt(Math.random()*1000)%dataarray.length;
     return dataarray[idx];
 }

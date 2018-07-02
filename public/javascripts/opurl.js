@@ -2,6 +2,7 @@ yaml = require('js-yaml');
 fs   = require('fs');
 
 class Opurl{
+
     constructor(url){
         this.url = url; //客户端请求的url
     }
