@@ -1,7 +1,5 @@
 'use strict'
 const AnyProxy = require('anyproxy');
-
-//初始化数据库
 const options = {
     port: 8001,
     rule: require('C:\\Users\\hjx19\\WebstormProjects\\AppFaultToleranceTest\\public\\javascripts\\proxyrule.js'),
