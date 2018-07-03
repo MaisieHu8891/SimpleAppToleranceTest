@@ -2,7 +2,7 @@
 const AnyProxy = require('anyproxy');
 const options = {
     port: 8001,
-    rule: require('C:\\Users\\hjx19\\WebstormProjects\\AppFaultToleranceTest\\public\\javascripts\\proxyrule.js'),
+    rule: require('D:\\coding\\WebstormProjects\\SimpleAppToleranceTest\\public\\javascripts\\proxyrule.js'),
     webInterface: {
         enable: true,
         webPort: 8002

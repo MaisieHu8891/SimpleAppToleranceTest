@@ -1,5 +1,5 @@
-let opurl= require('C:\\Users\\hjx19\\WebstormProjects\\AppFaultToleranceTest\\public\\javascripts\\opurl.js');
-let diffbody = require('C:\\Users\\hjx19\\WebstormProjects\\AppFaultToleranceTest\\public\\javascripts\\diffbody.js');
+let opurl= require('D:\\coding\\WebstormProjects\\SimpleAppToleranceTest\\public\\javascripts\\opurl.js');
+let diffbody = require('D:\\coding\\WebstormProjects\\SimpleAppToleranceTest\\public\\javascripts\\diffbody.js');
 
 module.exports = {
     summary: 'a rule to hack response',
@@ -10,7 +10,16 @@ module.exports = {
             console.log(requestDetail.url);
             let newResponse = responseDetail.response;
             let initbody = newResponse.body.toString();
-            let newbody = diffbody(initbody);
+
+            //加载宽松模式的数据，不会返回err null 等内容
+            //let newbody = diffbody.difffree(initbody);
+
+            //加载严格模式的数据，会返回err null 等内容
+            //let newbody = diffbody.diffstrict(initbody);
+
+            //加载返回大量数组的模式，注意要在只有少数数组返回的接口测试，否则会有性能问题
+            let newbody = diffbody.diffarray(initbody);
+
             newResponse.body = JSON.stringify(newbody);
             console.log(newResponse.body);
             return new Promise((resolve, reject) => {
