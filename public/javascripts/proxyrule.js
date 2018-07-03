@@ -1,5 +1,5 @@
-let opurl= require('D:\\coding\\WebstormProjects\\SimpleAppToleranceTest\\public\\javascripts\\opurl.js');
-let diffbody = require('D:\\coding\\WebstormProjects\\SimpleAppToleranceTest\\public\\javascripts\\diffbody.js');
+let opurl= require('./opurl.js');
+let diffbody = require('./diffbody.js');
 
 module.exports = {
     summary: 'a rule to hack response',
@@ -28,7 +28,6 @@ module.exports = {
                     }, 1000);
                 });
             }
-
         },
 
     }

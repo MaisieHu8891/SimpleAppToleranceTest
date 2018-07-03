@@ -1,5 +1,9 @@
 var randomjson = require('randomjson');
 
+function findKey (obj,value, compare = (a, b) => a === b) {
+    return Object.keys(obj).find(k => compare(obj[k], value))
+}
+
 function diffstrict(respdata){
     var modeljson = JSON.parse(respdata,function (key,value) {
 
@@ -37,20 +41,14 @@ function difffree(respdata){
 }
 
 function diffarray(respdata){
-    var modeljson = JSON.parse(respdata,function (key,value) {
+    modeljson = JSON.parse(respdata,function (key,value) {
         if(value instanceof Array){
-            while (value.length <=10) {
-                for(let i in value) {
-                    value.push(value[i]);
-                }
-            }
-            console.log(typeof value,value);
-            return value;
+            return findKey(respdata,value)+ '<@{10,25}>',value;
         }
-        return value;
+        return key,value;
     });
-
-    return modeljson;
+    console.log(modeljson);
+    return randomjson(modeljson);
 }
 
 module.exports= {

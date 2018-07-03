@@ -2,15 +2,16 @@
 const AnyProxy = require('anyproxy');
 const options = {
     port: 8001,
-    rule: require('D:\\coding\\WebstormProjects\\SimpleAppToleranceTest\\public\\javascripts\\proxyrule.js'),
+    rule: require('../javascripts/proxyrule.js'),
     webInterface: {
         enable: true,
         webPort: 8002
     },
+    //silent: true,
+    silent: false,
     forceProxyHttps: true,
     wsIntercept: true,
-    dangerouslyIgnoreUnauthorized:true,
-    silent: true
+    dangerouslyIgnoreUnauthorized:true
 };
 const proxyServer = new AnyProxy.ProxyServer(options);
 
