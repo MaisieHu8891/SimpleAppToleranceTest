@@ -41,14 +41,16 @@ function diffarray(respdata){
         if(value instanceof Array){
             while (value.length <=10) {
                 for(let i in value) {
-                    dataarray.push(value[i]);
+                    value.push(value[i]);
                 }
             }
+            console.log(typeof value,value);
             return value;
         }
         return value;
     });
-    return randomjson(modeljson);
+
+    return modeljson;
 }
 
 module.exports= {
