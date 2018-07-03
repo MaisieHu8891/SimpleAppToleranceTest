@@ -11,6 +11,13 @@
     "express": "~4.16.0",
     "http-errors": "~1.6.2",
     "morgan": "~1.9.0",
+<<<<<<< HEAD
     "pug": "2.0.0-beta11"
+=======
+    "pug": "2.0.0-beta11",
+    "anyproxy": "^4.0.10",
+    "appium-android-driver": "^3.0.1",
+    "js-yaml": "^3.12.0"
+>>>>>>> b32511d67d823103475949e9ef8b362a02d9fb71
   }
 }
