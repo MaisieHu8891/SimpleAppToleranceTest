@@ -10,6 +10,7 @@ module.exports = {
             console.log(requestDetail.url);
             let newResponse = responseDetail.response;
             let initbody = newResponse.body.toString();
+            console.log('原始返回的数据:'+initbody);
 
             //加载宽松模式的数据，不会返回err null 等内容
             //let newbody = diffbody.difffree(initbody);
@@ -21,7 +22,7 @@ module.exports = {
             let newbody = diffbody.diffarray(initbody);
 
             newResponse.body = JSON.stringify(newbody);
-            console.log(newResponse.body);
+            console.log('diff后的数据：'+newResponse.body);
             return new Promise((resolve, reject) => {
                 setTimeout(() => { // delay
                     resolve({ response: newResponse });

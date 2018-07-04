@@ -7,8 +7,8 @@ const options = {
         enable: true,
         webPort: 8002
     },
-    //silent: true,
-    silent: false,
+    silent: true,
+    //silent: false,
     forceProxyHttps: true,
     wsIntercept: true,
     dangerouslyIgnoreUnauthorized:true

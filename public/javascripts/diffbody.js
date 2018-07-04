@@ -38,17 +38,17 @@ function difffree(respdata){
 }
 
 function diffarray(respdata){
-    let tmpdata  = JSON.stringify(respdata);
-    console.log(tmpdata);
+    console.log(respdata);
     let regExp =/\w+(?=":\[)/ ;
-    if(tmpdata.match(regExp).length>=1){
-        let changemod = b.match(regExp)[0]+'<@{10,20}>';
-        //console.log(changemod);
-        tmpdata = tmpdata.replace(regExp,changemod);
-        let modeljson= JSON.parse(tmpdata);
+    let keyw = respdata.match(regExp);
+    if(keyw!=null){
+        let changemod = respdata.match(regExp)[0]+'<@{20,30}>';
+        respdata = respdata.replace(regExp,changemod);
+        console.log('hit array');
+        let modeljson= JSON.parse(respdata);
         return randomjson(modeljson);
     }
-    return randomjson(respdata);
+    return JSON.parse(respdata);
 }
 
 module.exports= {
