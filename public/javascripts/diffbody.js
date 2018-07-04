@@ -1,9 +1,6 @@
 var randomjson = require('randomjson');
 
-function findKey (obj,value, compare = (a, b) => a === b) {
-    return Object.keys(obj).find(k => compare(obj[k], value))
-}
-
+//参数respdata是string类型
 function diffstrict(respdata){
     var modeljson = JSON.parse(respdata,function (key,value) {
 
@@ -41,14 +38,17 @@ function difffree(respdata){
 }
 
 function diffarray(respdata){
-    modeljson = JSON.parse(respdata,function (key,value) {
-        if(value instanceof Array){
-            return findKey(respdata,value)+ '<@{10,25}>',value;
-        }
-        return key,value;
-    });
-    console.log(modeljson);
-    return randomjson(modeljson);
+    let tmpdata  = JSON.stringify(respdata);
+    console.log(tmpdata);
+    let regExp =/\w+(?=":\[)/ ;
+    if(tmpdata.match(regExp).length>=1){
+        let changemod = b.match(regExp)[0]+'<@{10,20}>';
+        //console.log(changemod);
+        tmpdata = tmpdata.replace(regExp,changemod);
+        let modeljson= JSON.parse(tmpdata);
+        return randomjson(modeljson);
+    }
+    return randomjson(respdata);
 }
 
 module.exports= {

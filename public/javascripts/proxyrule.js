@@ -17,7 +17,7 @@ module.exports = {
             //加载严格模式的数据，会返回err null 等内容
             //let newbody = diffbody.diffstrict(initbody);
 
-            //加载返回大量数组的模式，注意要在只有少数数组返回的接口测试，否则会有性能问题
+            //加载返回多个数组的模式，在有list的json中使用
             let newbody = diffbody.diffarray(initbody);
 
             newResponse.body = JSON.stringify(newbody);
