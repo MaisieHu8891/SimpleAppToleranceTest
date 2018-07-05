@@ -12,14 +12,16 @@ module.exports = {
             let initbody = newResponse.body.toString();
             console.log('原始返回的数据:'+initbody);
 
+            //注意：每次修改模式需重新运行test.js才会生效：
+
             //加载宽松模式的数据，不会返回err null 等内容
-            //let newbody = diffbody.difffree(initbody);
+            let newbody = diffbody.difffree(initbody);
 
             //加载严格模式的数据，会返回err null 等内容
             //let newbody = diffbody.diffstrict(initbody);
 
             //加载返回多个数组的模式，在有list的json中使用
-            let newbody = diffbody.diffarray(initbody);
+            //let newbody = diffbody.diffarray(initbody);
 
             newResponse.body = JSON.stringify(newbody);
             console.log('diff后的数据：'+newResponse.body);
