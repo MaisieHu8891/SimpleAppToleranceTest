@@ -1,8 +1,8 @@
-'use strict'
+
 const AnyProxy = require('anyproxy');
 const options = {
     port: 8001,
-    rule: require('../javascripts/proxyrule.js'),
+    rule: require('../javascripts/diffdatarule.js'),
     webInterface: {
         enable: true,
         webPort: 8002

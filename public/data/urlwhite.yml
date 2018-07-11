@@ -1,10 +1,12 @@
+#联运SDK——H5
+#- https://caesar.wan.panda.tv/api/mgame/list
+- https://caesar.wan.panda.tv/api/mgame/get
+#- https://wan.panda.tv/platform/mobi_task.json
+- https://task.wan.panda.tv/task/list
+
 #熊猫直播android观看端
 - https://api.m.panda.tv/ajax_get_mobile4_live_list_by_cate?cate=lol
-- https://api.m.panda.tv/ajax_slider_cate?cate=index
-- https://api.m.panda.tv/ajax_card_newlist?cate=index
 - https://api.m.panda.tv/ajax_get_liveroom_baseuserinfo
-- https://api.m.panda.tv/tavern/eris/member/list
-- https://api.m.panda.tv/ajax_get_mobile4_live_list_by_cate?cate=starcraft
 #游戏联运SDK
 - https://api.panda.tv/users/get?_caller=pd_mgame
 - https://api.panda.tv/wan/order/create?_caller=pd_mgame

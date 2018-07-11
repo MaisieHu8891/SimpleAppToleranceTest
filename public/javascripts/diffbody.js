@@ -22,11 +22,13 @@ function diffstrict(respdata){
 function difffree(respdata){
     var modeljson = JSON.parse(respdata,function (key,value) {
         if(typeof value ==='number' && key !=='errno'){
-            return '<@ [0]|[100-99999999]|>';
+            return '<@ [0]|[100-99999999]>';
         }
+
         if(typeof value === 'string'){
             return '<@ string{1,50}|chinese{4,10}>'
-        }
+        }//&& value.indexOf('http')!==0
+
         if(typeof value === 'boolean'){
             return '<@ boolean>';
         }
